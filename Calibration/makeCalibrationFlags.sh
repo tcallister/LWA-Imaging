@@ -28,7 +28,7 @@ python $flaggingCodeDir/flag_bad_ants.py \
 python $flaggingCodeDir/plot_autos.py $outdir/msfiles/$msfile $outdir/flags/
 
 # Copy existing baseline flags
-cp $flaggingCodeDir/../flags/*bl $antflag_dir
+cp $flaggingCodeDir/flags/*bl $antflag_dir
 
 python $flaggingCodeDir/flags_concatfiles.py \
     -s $antflag_dir

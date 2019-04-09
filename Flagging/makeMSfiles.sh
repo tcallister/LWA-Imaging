@@ -29,14 +29,12 @@ cd $workdir
 if [ ! -e $workdir/dada2ms.cfg ]; then ln -s /opt/astro/dada2ms/share/dada2ms/dada2ms.cfg.fiber $workdir/dada2ms.cfg; fi
 
 # Convert first subband
-#dada2ms-tst3 ${datadir}/00/${dadafile} $ms
-dada2ms-tst3 ${datadir}/00/${dadafile} ${workdir}/00.ms
+dada2ms-tst3 ${datadir}/00/${dadafile} $ms
 echo 00
 
 # Convert and append remaining subbands
 for band in {01..21}; do
     dada2ms-tst3 --append --addspw ${datadir}/${band}/${dadafile} $ms
-    #dada2ms-tst3 ${datadir}/${band}/${dadafile} ${workdir}/${band}.ms
     echo ${band}
 done
 

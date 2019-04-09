@@ -7,7 +7,7 @@ cfgfile=${1}
 . $cfgfile
 mkdir -p $tmpdir
 mkdir -p $outdir
-cp $cfgfile $outdir
+mkdir -p $scriptdir
 
 commandFile=${scriptdir}/calibrationCommands.txt
 if [ -f $commandFile ]; then rm $commandFile; fi

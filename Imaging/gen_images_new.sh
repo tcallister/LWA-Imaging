@@ -3,7 +3,6 @@
 
 # Environment
 cfgfile=${1}
-suffix=${2}
 . $cfgfile
 
 # Make directories
@@ -19,16 +18,16 @@ mkdir -p $fitsdir
 cp $cfgfile $outdir
 cp $dadalist $outdir
 
-msCommands=$scriptdir/do_makeMS_${suffix}.txt
+msCommands=$scriptdir/do_makeMS.txt
 if [ -f $msCommands ]; then rm $msCommands; fi
 touch $msCommands
 
-cleanCommands=$scriptdir/do_cleanCommands_${suffix}.txt
+cleanCommands=$scriptdir/do_cleanCommands.txt
 if [ -f $cleanCommands ]; then rm $cleanCommands; fi
 touch $cleanCommands
 
 if $imageallsubbands; then
-    concatCommands=$outdir/do_concatCommands_${suffix}.txt
+    concatCommands=$outdir/do_concatCommands.txt
     if [ -f $concatCommands ]; then rm $concatCommands; fi
     touch $concatCommands
 fi
