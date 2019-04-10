@@ -6,6 +6,11 @@ PYTHONPATH=/opt/astro/pyrap-1.1.0/python:/lustre/mmanders/LWA/modules:$PYTHONPAT
 PATH=/opt/astro/wsclean-1.11-gcc4.8.5_cxx11/bin:$PATH:/opt/astro/aoflagger-2.7.1-gcc4.8.5_cxx11/bin
 . /opt/astro/env.sh
 
+# Get script location
+code_dir=`dirname "$0"`
+echo "!!!!!!!!!!"
+echo $code_dir
+
 # Parameter defaults
 remove_rfi=false
 do_pol_swap=false
@@ -124,7 +129,7 @@ fi
 
 if $peel; then
     echo "PEELING"
-    /home/tcallister/Imaging/gen_sourcesjson_resolved.py ${outdir}/${ms} >> sources_${band}.json
+    $code_dir/gen_sourcesjson_resolved.py ${outdir}/${ms} >> sources_${band}.json
     cp sources_${band}.json ${outdir}/sources_`basename ${ms%.*}.json`
     JULIA_PKGDIR=/opt/astro/mwe/ttcal-0.3.0/julia-packages/ julia-0.4.6 /home/mmanders/scripts/peel_addtomodel.jl "${outdir}/${ms}" "sources_${band}.json"
 elif $zest; then

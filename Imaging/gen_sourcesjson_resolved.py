@@ -14,8 +14,8 @@ if len(sys.argv) != 2:
     sys.exit()
 
 srcs = [{'label': 'CasA', 'flux': '16530', 'alpha': -0.72, 'position': 'J2000 23h23m24s +58d48m54s'},
-        {'label': 'CygA', 'flux': '16300', 'alpha': -0.58, 'position': 'J2000 19h59m28.35663s +40d44m02.0970s'}]
-        #{'label': 'Sun',  'flux': '16000', 'alpha': 2.2  , 'position': 'SUN'},
+        {'label': 'CygA', 'flux': '16300', 'alpha': -0.58, 'position': 'J2000 19h59m28.35663s +40d44m02.0970s'},
+        {'label': 'Sun',  'flux': '16000', 'alpha': 2.2  , 'position': 'SUN'}]
         #{'label': 'TauA', 'flux': '1770' , 'alpha': -0.27, 'position': 'J2000 05h34m31.94s +22d00m52.2s'}]
         #{'label': 'TauA', 'flux': '1770' , 'alpha': -0.27, 'position': 'J2000 05h34m31.94s +22d00m52.2s'}]
         #{'label': 'VirA', 'flux': '2400' , 'alpha': -0.86, 'position': 'J2000 12h30m49.42338s +12d23m28.0439s'},

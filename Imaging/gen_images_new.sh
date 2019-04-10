@@ -50,7 +50,7 @@ for dada in `cat $dadalist`; do
         bcal=${caldir}/${band}-T1al.bcal
         tmp_subdir=${tmpdir}/${ti}/${band} # /lustre/mmanders/gen_movie/int00001/04
 
-        msCommand="/home/tcallister/Imaging/makeMS.sh
+        msCommand="$repo_dir/Imaging/makeMS.sh
             --dadadir $dada_dir
             --band $band
             --dada $dada
@@ -79,15 +79,15 @@ for dada in `cat $dadalist`; do
     #if $imageallsubbands; then
     if $concat; then
 
-        concatCommand="/home/tcallister/Imaging/concat.sh ${msdir}/${ti}/ ${msdir}/${dada%.*}.ms"
+        concatCommand="$repo_dir/Imaging/concat.sh ${msdir}/${ti}/ ${msdir}/${dada%.*}.ms"
         echo $concatCommand >> $concatCommands
 
-        cleanCommand="/home/tcallister/Imaging/clean.sh ${fitsdir}/${dada%.*} ${msdir}/${dada%.*}.ms"
+        cleanCommand="$repo_dir/Imaging/clean.sh ${fitsdir}/${dada%.*} ${msdir}/${dada%.*}.ms"
         echo $cleanCommand >> $cleanCommands
 
     else
 
-        cleanCommand="/home/tcallister/Imaging/clean.sh ${fitsdir}/${dada%.*} ${msdir}/${ti}/*.ms"
+        cleanCommand="$repo_dir/Imaging/clean.sh ${fitsdir}/${dada%.*} ${msdir}/${ti}/*.ms"
         echo "$cleanCommand" >> $cleanCommands
 
     fi
